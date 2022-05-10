@@ -1,0 +1,439 @@
+﻿<Window x:Class="MasterMindWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MasterMindWPF"
+        mc:Ignorable="d"
+        Title="MasterMind" Height="800" Width="600"
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <local:StringToBackgroundConverter x:Key="StringToBackgroundConverter" />
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.25*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="1.25*"/>
+        </Grid.RowDefinitions>
+        <!--Solution row-->
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="MasterMind" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Medium" Foreground="Salmon"/>
+            <Button x:Name="solution_1" Grid.Column="1" Width="40" Height="40" Style="{StaticResource RoundButtonTemplate}" Background="Black" Content="X" FontSize="18" FontWeight="Bold" Foreground="White"/>
+            <Button x:Name="solution_2" Grid.Column="2" Width="40" Height="40" Style="{StaticResource RoundButtonTemplate}" Background="Black" Content="X" FontSize="18" FontWeight="Bold" Foreground="White"/>
+            <Button x:Name="solution_3" Grid.Column="3" Width="40" Height="40" Style="{StaticResource RoundButtonTemplate}" Background="Black" Content="X" FontSize="18" FontWeight="Bold" Foreground="White"/>
+            <Button x:Name="solution_4" Grid.Column="4" Width="40" Height="40" Style="{StaticResource RoundButtonTemplate}" Background="Black" Content="X" FontSize="18" FontWeight="Bold" Foreground="White"/>
+        </Grid>
+        <!--10. row-->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" CornerRadius="10" BorderThickness="1" BorderBrush="Black" Margin="4"/>
+            <Border Grid.Column="0" BorderThickness="1 2 0 1" BorderBrush="Black"/>
+            <Border Grid.Column="1" BorderThickness="2 2 0 1" BorderBrush="Black"/>
+            <Border Grid.Column="2" BorderThickness="1 2 0 1" BorderBrush="Black"/>
+            <Border Grid.Column="3" BorderThickness="1 2 0 1" BorderBrush="Black"/>
+            <Border Grid.Column="4" BorderThickness="1 2 1 1" BorderBrush="Black"/>
+
+            <Button x:Name="b_10_1" Click="b_Tip_Click" Grid.Column="1" Width="40" Height="40" IsEnabled="False" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            <Button x:Name="b_10_2" Click="b_Tip_Click" Grid.Column="2" Width="40" Height="40" IsEnabled="False" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            <Button x:Name="b_10_3" Click="b_Tip_Click" Grid.Column="3" Width="40" Height="40" IsEnabled="False" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            <Button x:Name="b_10_4" Click="b_Tip_Click" Grid.Column="4" Width="40" Height="40" IsEnabled="False" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="v_10_1" Grid.Row="0" Grid.Column="0" Width="15" Height="15" Visibility="Hidden" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+                <Button x:Name="v_10_2" Grid.Row="0" Grid.Column="1" Width="15" Height="15" Visibility="Hidden" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+                <Button x:Name="v_10_3" Grid.Row="1" Grid.Column="0" Width="15" Height="15" Visibility="Hidden" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+                <Button x:Name="v_10_4" Grid.Row="1" Grid.Column="1" Width="15" Height="15" Visibility="Hidden" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            </Grid>
+        </Grid>
+        <!--9. row-->
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" CornerRadius="10" BorderThickness="1" BorderBrush="Black" Margin="4"/>
+            <Border Grid.Column="0" BorderThickness="1 1 0 1" BorderBrush="Black"/>
+            <Border Grid.Column="1" BorderThickness="2 1 0 1" BorderBrush="Black"/>
+            <Border Grid.Column="2" BorderThickness="1 1 0 1" BorderBrush="Black"/>
+            <Border Grid.Column="3" BorderThickness="1 1 0 1" BorderBrush="Black"/>
+            <Border Grid.Column="4" BorderThickness="1 1 1 1" BorderBrush="Black"/>
+
+            <Button x:Name="b_9_1" Click="b_Tip_Click" Grid.Column="1" Width="40" Height="40" IsEnabled="False" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            <Button x:Name="b_9_2" Click="b_Tip_Click" Grid.Column="2" Width="40" Height="40" IsEnabled="False" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            <Button x:Name="b_9_3" Click="b_Tip_Click" Grid.Column="3" Width="40" Height="40" IsEnabled="False" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            <Button x:Name="b_9_4" Click="b_Tip_Click" Grid.Column="4" Width="40" Height="40" IsEnabled="False" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="v_9_1" Grid.Row="0" Grid.Column="0" Width="15" Height="15" Visibility="Hidden" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+                <Button x:Name="v_9_2" Grid.Row="0" Grid.Column="1" Width="15" Height="15" Visibility="Hidden" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+                <Button x:Name="v_9_3" Grid.Row="1" Grid.Column="0" Width="15" Height="15" Visibility="Hidden" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+                <Button x:Name="v_9_4" Grid.Row="1" Grid.Column="1" Width="15" Height="15" Visibility="Hidden" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            </Grid>
+        </Grid>
+        <!--8. row-->
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" CornerRadius="10" BorderThickness="1" BorderBrush="Black" Margin="4"/>
+            <Border Grid.Column="0" BorderThickness="1 1 0 1" BorderBrush="Black"/>
+            <Border Grid.Column="1" BorderThickness="2 1 0 1" BorderBrush="Black"/>
+            <Border Grid.Column="2" BorderThickness="1 1 0 1" BorderBrush="Black"/>
+            <Border Grid.Column="3" BorderThickness="1 1 0 1" BorderBrush="Black"/>
+            <Border Grid.Column="4" BorderThickness="1 1 1 1" BorderBrush="Black"/>
+
+            <Button x:Name="b_8_1" Click="b_Tip_Click" Grid.Column="1" Width="40" Height="40" IsEnabled="False" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            <Button x:Name="b_8_2" Click="b_Tip_Click" Grid.Column="2" Width="40" Height="40" IsEnabled="False" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            <Button x:Name="b_8_3" Click="b_Tip_Click" Grid.Column="3" Width="40" Height="40" IsEnabled="False" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            <Button x:Name="b_8_4" Click="b_Tip_Click" Grid.Column="4" Width="40" Height="40" IsEnabled="False" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="v_8_1" Grid.Row="0" Grid.Column="0" Width="15" Height="15" Visibility="Hidden" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+                <Button x:Name="v_8_2" Grid.Row="0" Grid.Column="1" Width="15" Height="15" Visibility="Hidden" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+                <Button x:Name="v_8_3" Grid.Row="1" Grid.Column="0" Width="15" Height="15" Visibility="Hidden" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+                <Button x:Name="v_8_4" Grid.Row="1" Grid.Column="1" Width="15" Height="15" Visibility="Hidden" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            </Grid>
+        </Grid>
+        <!--7. row-->
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" CornerRadius="10" BorderThickness="1" BorderBrush="Black" Margin="4"/>
+            <Border Grid.Column="0" BorderThickness="1 1 0 1" BorderBrush="Black"/>
+            <Border Grid.Column="1" BorderThickness="2 1 0 1" BorderBrush="Black"/>
+            <Border Grid.Column="2" BorderThickness="1 1 0 1" BorderBrush="Black"/>
+            <Border Grid.Column="3" BorderThickness="1 1 0 1" BorderBrush="Black"/>
+            <Border Grid.Column="4" BorderThickness="1 1 1 1" BorderBrush="Black"/>
+
+            <Button x:Name="b_7_1" Click="b_Tip_Click" Grid.Column="1" Width="40" Height="40" IsEnabled="False" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            <Button x:Name="b_7_2" Click="b_Tip_Click" Grid.Column="2" Width="40" Height="40" IsEnabled="False" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            <Button x:Name="b_7_3" Click="b_Tip_Click" Grid.Column="3" Width="40" Height="40" IsEnabled="False" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            <Button x:Name="b_7_4" Click="b_Tip_Click" Grid.Column="4" Width="40" Height="40" IsEnabled="False" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="v_7_1" Grid.Row="0" Grid.Column="0" Width="15" Height="15" Visibility="Hidden" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+                <Button x:Name="v_7_2" Grid.Row="0" Grid.Column="1" Width="15" Height="15" Visibility="Hidden" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+                <Button x:Name="v_7_3" Grid.Row="1" Grid.Column="0" Width="15" Height="15" Visibility="Hidden" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+                <Button x:Name="v_7_4" Grid.Row="1" Grid.Column="1" Width="15" Height="15" Visibility="Hidden" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            </Grid>
+        </Grid>
+        <!--6. row-->
+        <Grid Grid.Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" CornerRadius="10" BorderThickness="1" BorderBrush="Black" Margin="4"/>
+            <Border Grid.Column="0" BorderThickness="1 1 0 1" BorderBrush="Black"/>
+            <Border Grid.Column="1" BorderThickness="2 1 0 1" BorderBrush="Black"/>
+            <Border Grid.Column="2" BorderThickness="1 1 0 1" BorderBrush="Black"/>
+            <Border Grid.Column="3" BorderThickness="1 1 0 1" BorderBrush="Black"/>
+            <Border Grid.Column="4" BorderThickness="1 1 1 1" BorderBrush="Black"/>
+
+            <Button x:Name="b_6_1" Click="b_Tip_Click" Grid.Column="1" Width="40" Height="40" IsEnabled="False" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            <Button x:Name="b_6_2" Click="b_Tip_Click" Grid.Column="2" Width="40" Height="40" IsEnabled="False" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            <Button x:Name="b_6_3" Click="b_Tip_Click" Grid.Column="3" Width="40" Height="40" IsEnabled="False" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            <Button x:Name="b_6_4" Click="b_Tip_Click" Grid.Column="4" Width="40" Height="40" IsEnabled="False" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="v_6_1" Grid.Row="0" Grid.Column="0" Width="15" Height="15" Visibility="Hidden" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+                <Button x:Name="v_6_2" Grid.Row="0" Grid.Column="1" Width="15" Height="15" Visibility="Hidden" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+                <Button x:Name="v_6_3" Grid.Row="1" Grid.Column="0" Width="15" Height="15" Visibility="Hidden" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+                <Button x:Name="v_6_4" Grid.Row="1" Grid.Column="1" Width="15" Height="15" Visibility="Hidden" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            </Grid>
+        </Grid>
+        <!--5. row-->
+        <Grid Grid.Row="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" CornerRadius="10" BorderThickness="1" BorderBrush="Black" Margin="4"/>
+            <Border Grid.Column="0" BorderThickness="1 1 0 1" BorderBrush="Black"/>
+            <Border Grid.Column="1" BorderThickness="2 1 0 1" BorderBrush="Black"/>
+            <Border Grid.Column="2" BorderThickness="1 1 0 1" BorderBrush="Black"/>
+            <Border Grid.Column="3" BorderThickness="1 1 0 1" BorderBrush="Black"/>
+            <Border Grid.Column="4" BorderThickness="1 1 1 1" BorderBrush="Black"/>
+
+            <Button x:Name="b_5_1" Click="b_Tip_Click" Grid.Column="1" Width="40" Height="40" IsEnabled="False" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            <Button x:Name="b_5_2" Click="b_Tip_Click" Grid.Column="2" Width="40" Height="40" IsEnabled="False" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            <Button x:Name="b_5_3" Click="b_Tip_Click" Grid.Column="3" Width="40" Height="40" IsEnabled="False" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            <Button x:Name="b_5_4" Click="b_Tip_Click" Grid.Column="4" Width="40" Height="40" IsEnabled="False" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="v_5_1" Grid.Row="0" Grid.Column="0" Width="15" Height="15" Visibility="Hidden" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+                <Button x:Name="v_5_2" Grid.Row="0" Grid.Column="1" Width="15" Height="15" Visibility="Hidden" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+                <Button x:Name="v_5_3" Grid.Row="1" Grid.Column="0" Width="15" Height="15" Visibility="Hidden" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+                <Button x:Name="v_5_4" Grid.Row="1" Grid.Column="1" Width="15" Height="15" Visibility="Hidden" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            </Grid>
+        </Grid>
+        <!--4. row-->
+        <Grid Grid.Row="7">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" CornerRadius="10" BorderThickness="1" BorderBrush="Black" Margin="4"/>
+            <Border Grid.Column="0" BorderThickness="1 1 0 1" BorderBrush="Black"/>
+            <Border Grid.Column="1" BorderThickness="2 1 0 1" BorderBrush="Black"/>
+            <Border Grid.Column="2" BorderThickness="1 1 0 1" BorderBrush="Black"/>
+            <Border Grid.Column="3" BorderThickness="1 1 0 1" BorderBrush="Black"/>
+            <Border Grid.Column="4" BorderThickness="1 1 1 1" BorderBrush="Black"/>
+
+            <Button x:Name="b_4_1" Click="b_Tip_Click" Grid.Column="1" Width="40" Height="40" IsEnabled="False" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            <Button x:Name="b_4_2" Click="b_Tip_Click" Grid.Column="2" Width="40" Height="40" IsEnabled="False" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            <Button x:Name="b_4_3" Click="b_Tip_Click" Grid.Column="3" Width="40" Height="40" IsEnabled="False" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            <Button x:Name="b_4_4" Click="b_Tip_Click" Grid.Column="4" Width="40" Height="40" IsEnabled="False" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="v_4_1" Grid.Row="0" Grid.Column="0" Width="15" Height="15" Visibility="Hidden" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+                <Button x:Name="v_4_2" Grid.Row="0" Grid.Column="1" Width="15" Height="15" Visibility="Hidden" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+                <Button x:Name="v_4_3" Grid.Row="1" Grid.Column="0" Width="15" Height="15" Visibility="Hidden" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+                <Button x:Name="v_4_4" Grid.Row="1" Grid.Column="1" Width="15" Height="15" Visibility="Hidden" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            </Grid>
+        </Grid>
+        <!--3. row-->
+        <Grid Grid.Row="8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" CornerRadius="10" BorderThickness="1" BorderBrush="Black" Margin="4"/>
+            <Border Grid.Column="0" BorderThickness="1 1 0 1" BorderBrush="Black"/>
+            <Border Grid.Column="1" BorderThickness="2 1 0 1" BorderBrush="Black"/>
+            <Border Grid.Column="2" BorderThickness="1 1 0 1" BorderBrush="Black"/>
+            <Border Grid.Column="3" BorderThickness="1 1 0 1" BorderBrush="Black"/>
+            <Border Grid.Column="4" BorderThickness="1 1 1 1" BorderBrush="Black"/>
+
+            <Button x:Name="b_3_1" Click="b_Tip_Click" Grid.Column="1" Width="40" Height="40" IsEnabled="False" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            <Button x:Name="b_3_2" Click="b_Tip_Click" Grid.Column="2" Width="40" Height="40" IsEnabled="False" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            <Button x:Name="b_3_3" Click="b_Tip_Click" Grid.Column="3" Width="40" Height="40" IsEnabled="False" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            <Button x:Name="b_3_4" Click="b_Tip_Click" Grid.Column="4" Width="40" Height="40" IsEnabled="False" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="v_3_1" Grid.Row="0" Grid.Column="0" Width="15" Height="15" Visibility="Hidden" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+                <Button x:Name="v_3_2" Grid.Row="0" Grid.Column="1" Width="15" Height="15" Visibility="Hidden" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+                <Button x:Name="v_3_3" Grid.Row="1" Grid.Column="0" Width="15" Height="15" Visibility="Hidden" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+                <Button x:Name="v_3_4" Grid.Row="1" Grid.Column="1" Width="15" Height="15" Visibility="Hidden" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            </Grid>
+        </Grid>
+        <!--2. row-->
+        <Grid Grid.Row="9">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" CornerRadius="10" BorderThickness="1" BorderBrush="Black" Margin="4"/>
+            <Border Grid.Column="0" BorderThickness="1 1 0 1" BorderBrush="Black"/>
+            <Border Grid.Column="1" BorderThickness="2 1 0 1" BorderBrush="Black"/>
+            <Border Grid.Column="2" BorderThickness="1 1 0 1" BorderBrush="Black"/>
+            <Border Grid.Column="3" BorderThickness="1 1 0 1" BorderBrush="Black"/>
+            <Border Grid.Column="4" BorderThickness="1 1 1 1" BorderBrush="Black"/>
+
+            <Button x:Name="b_2_1" Click="b_Tip_Click" Grid.Column="1" Width="40" Height="40" IsEnabled="False" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            <Button x:Name="b_2_2" Click="b_Tip_Click" Grid.Column="2" Width="40" Height="40" IsEnabled="False" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            <Button x:Name="b_2_3" Click="b_Tip_Click" Grid.Column="3" Width="40" Height="40" IsEnabled="False" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            <Button x:Name="b_2_4" Click="b_Tip_Click" Grid.Column="4" Width="40" Height="40" IsEnabled="False" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="v_2_1" Grid.Row="0" Grid.Column="0" Width="15" Height="15" Visibility="Hidden" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+                <Button x:Name="v_2_2" Grid.Row="0" Grid.Column="1" Width="15" Height="15" Visibility="Hidden" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+                <Button x:Name="v_2_3" Grid.Row="1" Grid.Column="0" Width="15" Height="15" Visibility="Hidden" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+                <Button x:Name="v_2_4" Grid.Row="1" Grid.Column="1" Width="15" Height="15" Visibility="Hidden" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            </Grid>
+        </Grid>
+        <!--1. row-->
+        <Grid Grid.Row="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" CornerRadius="10" BorderThickness="1" BorderBrush="Black" Margin="4"/>
+            <Border Grid.Column="0" BorderThickness="1 1 0 2" BorderBrush="Black"/>
+            <Border Grid.Column="1" BorderThickness="2 1 0 2" BorderBrush="Black"/>
+            <Border Grid.Column="2" BorderThickness="1 1 0 2" BorderBrush="Black"/>
+            <Border Grid.Column="3" BorderThickness="1 1 0 2" BorderBrush="Black"/>
+            <Border Grid.Column="4" BorderThickness="1 1 1 2" BorderBrush="Black"/>
+            
+            <Button x:Name="b_1_1" Click="b_Tip_Click" Grid.Column="1" Width="40" Height="40" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            <Button x:Name="b_1_2" Click="b_Tip_Click" Grid.Column="2" Width="40" Height="40" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            <Button x:Name="b_1_3" Click="b_Tip_Click" Grid.Column="3" Width="40" Height="40" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            <Button x:Name="b_1_4" Click="b_Tip_Click" Grid.Column="4" Width="40" Height="40" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="v_1_1" Grid.Row="0" Grid.Column="0" Width="15" Height="15" Visibility="Hidden" Style="{StaticResource RoundButtonTemplate}" Background="{Binding Path=Background, UpdateSourceTrigger=Explicit}"/>
+                <Button x:Name="v_1_2" Grid.Row="0" Grid.Column="1" Width="15" Height="15" Visibility="Hidden" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+                <Button x:Name="v_1_3" Grid.Row="1" Grid.Column="0" Width="15" Height="15" Visibility="Hidden" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+                <Button x:Name="v_1_4" Grid.Row="1" Grid.Column="1" Width="15" Height="15" Visibility="Hidden" Style="{StaticResource RoundButtonTemplate}" Background="White"/>
+            </Grid>
+        </Grid>
+        <!--Tip row-->
+        <Grid Grid.Row="11">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Button x:Name="b_blue" Click="b_Click" Grid.Column="0" Width="40" Height="40" Style="{StaticResource RoundButtonTemplate}" Background="Blue"/>
+                <CheckBox x:Name="cb_blue" Click="cb_Click" Margin="0 5 0 0" HorizontalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Button x:Name="b_green" Click="b_Click" Grid.Column="1" Width="40" Height="40" Style="{StaticResource RoundButtonTemplate}" Background="Green"/>
+                <CheckBox x:Name="cb_green" Click="cb_Click" Margin="0 5 0 0" HorizontalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Button x:Name="b_purple" Click="b_Click" Grid.Column="2" Width="40" Height="40" Style="{StaticResource RoundButtonTemplate}" Background="Purple"/>
+                <CheckBox x:Name="cb_purple" Click="cb_Click" Margin="0 5 0 0" HorizontalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Button x:Name="b_orange" Click="b_Click" Grid.Column="3" Width="40" Height="40" Style="{StaticResource RoundButtonTemplate}" Background="Orange"/>
+                <CheckBox x:Name="cb_orange" Click="cb_Click" Margin="0 5 0 0" HorizontalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Button x:Name="b_red" Click="b_Click" Grid.Column="4" Width="40" Height="40" Style="{StaticResource RoundButtonTemplate}" Background="Red"/>
+                <CheckBox x:Name="cb_red" Click="cb_Click" Margin="0 5 0 0" HorizontalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Button x:Name="b_pink" Click="b_Click" Grid.Column="5" Width="40" Height="40" Style="{StaticResource RoundButtonTemplate}" Background="Pink"/>
+                <CheckBox x:Name="cb_pink" Click="cb_Click" Margin="0 5 0 0" HorizontalAlignment="Center"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

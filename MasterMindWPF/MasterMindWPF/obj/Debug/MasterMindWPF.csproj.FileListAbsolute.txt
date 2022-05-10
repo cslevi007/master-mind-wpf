@@ -1,0 +1,17 @@
+C:\Users\CLS1MC\source\repos\MasterMindWPF\MasterMindWPF\bin\Debug\MasterMindWPF.exe.config
+C:\Users\CLS1MC\source\repos\MasterMindWPF\MasterMindWPF\bin\Debug\MasterMindWPF.exe
+C:\Users\CLS1MC\source\repos\MasterMindWPF\MasterMindWPF\bin\Debug\MasterMindWPF.pdb
+C:\Users\CLS1MC\source\repos\MasterMindWPF\MasterMindWPF\obj\Debug\MasterMindWPF.csprojAssemblyReference.cache
+C:\Users\CLS1MC\source\repos\MasterMindWPF\MasterMindWPF\obj\Debug\MainWindow.g.cs
+C:\Users\CLS1MC\source\repos\MasterMindWPF\MasterMindWPF\obj\Debug\App.g.cs
+C:\Users\CLS1MC\source\repos\MasterMindWPF\MasterMindWPF\obj\Debug\MasterMindWPF_MarkupCompile.cache
+C:\Users\CLS1MC\source\repos\MasterMindWPF\MasterMindWPF\obj\Debug\MasterMindWPF_MarkupCompile.lref
+C:\Users\CLS1MC\source\repos\MasterMindWPF\MasterMindWPF\obj\Debug\MainWindow.baml
+C:\Users\CLS1MC\source\repos\MasterMindWPF\MasterMindWPF\obj\Debug\MasterMindWPF.g.resources
+C:\Users\CLS1MC\source\repos\MasterMindWPF\MasterMindWPF\obj\Debug\MasterMindWPF.Properties.Resources.resources
+C:\Users\CLS1MC\source\repos\MasterMindWPF\MasterMindWPF\obj\Debug\MasterMindWPF.csproj.GenerateResource.cache
+C:\Users\CLS1MC\source\repos\MasterMindWPF\MasterMindWPF\obj\Debug\MasterMindWPF.csproj.CoreCompileInputs.cache
+C:\Users\CLS1MC\source\repos\MasterMindWPF\MasterMindWPF\obj\Debug\MasterMindWPF.exe
+C:\Users\CLS1MC\source\repos\MasterMindWPF\MasterMindWPF\obj\Debug\MasterMindWPF.pdb
+C:\Users\CLS1MC\source\repos\MasterMindWPF\MasterMindWPF\obj\Debug\App.baml
+C:\Users\CLS1MC\source\repos\MasterMindWPF\MasterMindWPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
